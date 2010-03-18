@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+
+  SimplicialSets.xml            SimplicialObjects package documentation            Mohamed Barakat
+                                                                                        Ana Romero
+
+         Copyright (C) 2010 Mohamed Barakat and Ana Romero
+
+-->
+
+<Chapter Label="SimplicialSets">
+<Heading>Simplicial Sets</Heading>
+
+<Section Label="SimplicialSets:Category">
+<Heading>Simplicial Sets: Category and Representations</Heading>
+
+<#Include Label="IsSimplicialSet">
+<#Include Label="IsSimplicialSetRep">
+
+</Section>
+
+<Section Label="SimplicialSets:Constructors">
+<Heading>Simplicial Sets: Constructors</Heading>
+
+</Section>
+
+<Section Label="SimplicialSets:Properties">
+<Heading>Simplicial Sets: Properties</Heading>
+
+</Section>
+
+<Section Label="SimplicialSets:Attributes">
+<Heading>Simplicial Sets: Attributes</Heading>
+
+<!-- the following attributes are intrinsic in the sense that
+     they can safely be attached to any copy of the sheaf -->
+
+</Section>
+
+<Section Label="SimplicialSets:LISMS">
+<Heading>&LISMS;: Logical Implications for Simplicial Sets</Heading>
+
+</Section>
+
+<Section Label="SimplicialSets:Operations">
+<Heading>Simplicial Sets: Operations and Functions</Heading>
+
+</Section>
+<!-- ############################################################ -->
+
+</Chapter>

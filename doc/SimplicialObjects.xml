@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+
+  SimplicialObjects.xml            SimplicialObjects package documentation            Mohamed Barakat
+                                                                                           Ana Romero
+
+         Copyright (C) 2010 Mohamed Barakat and Ana Romero
+
+-->
+
+<Chapter Label="SimplicialObjects">
+<Heading>Simplicial Objects</Heading>
+
+<Section Label="SimplicialObjects:Category">
+<Heading>Simplicial Objects: Category and Representations</Heading>
+
+<#Include Label="IsSimplicialObject">
+<#Include Label="IsSimplicialObjectRep">
+
+</Section>
+
+<Section Label="SimplicialObjects:Constructors">
+<Heading>Simplicial Objects: Constructors</Heading>
+
+</Section>
+
+<Section Label="SimplicialObjects:Properties">
+<Heading>Simplicial Objects: Properties</Heading>
+
+</Section>
+
+<Section Label="SimplicialObjects:Attributes">
+<Heading>Simplicial Objects: Attributes</Heading>
+
+<!-- the following attributes are intrinsic in the sense that
+     they can safely be attached to any copy of the sheaf -->
+
+</Section>
+
+<Section Label="SimplicialObjects:LISMO">
+<Heading>&LISMO;: Logical Implications for Simplicial Objects</Heading>
+
+</Section>
+
+<Section Label="SimplicialObjects:Operations">
+<Heading>Simplicial Objects: Operations and Functions</Heading>
+
+</Section>
+<!-- ############################################################ -->
+
+</Chapter>

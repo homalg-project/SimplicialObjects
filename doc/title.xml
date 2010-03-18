@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 
+
+  title.xml             SimplicialObjects package documentation           Mohamed Barakat
+                                                                               Ana Romero
+
+         Copyright (C) 2010 Mohamed Barakat and Ana Romero
+
+-->
+<TitlePage>
+  <Title>&SimplicialObjects;</Title>
+  <Subtitle>Topology via Simplicial Sets</Subtitle>
+  <TitleComment>(<E>this manual is still under construction</E>)
+    <Br/><Br/>
+    
+    This manual is best viewed as an <B>HTML</B> document. The latest
+    version is available <B>online</B> at: <Br/><Br/>
+    
+    <URL>http://homalg.math.rwth-aachen.de/~barakat/SimplicialObjects/chap0.html</URL>
+    <Br/><Br/>
+    
+    An <B>offline</B> version should be included in the documentation
+    subfolder of the package.
+    
+    This package is part of the &homalg;-project:
+    <Br/><Br/>
+    
+    <URL>http://homalg.math.rwth-aachen.de/index.php/unreleased/simplicialsets</URL>
+  </TitleComment>
+  <Version>Version <#Include SYSTEM "../VERSION"></Version>
+  <Author>Mohamed Barakat<Alt Only="LaTeX"><Br/></Alt>
+    <Address>
+      Department of Mathematics, <Br/>
+      University of Kaiserslautern, <Br/>
+      67653 Kaiserslautern, <Br/>
+      Germany
+    </Address>
+    <Email>barakat@mathematik.uni-kl.de</Email>
+    <Homepage>http://wwwb.math.rwth-aachen.de/&tilde;barakat/</Homepage>
+  </Author>
+  <Author>Ana Romero<Alt Only="LaTeX"><Br/></Alt>
+    <Address>
+      Departamento de Matemáticas y Computación, <Br/>
+      Universidad de La Rioja, <Br/>
+      Edificio Vives, c/Luis de Ulloa s/n, <Br/>
+      26004, Logroño, <Br/>
+      Spain
+    </Address>
+    <Email>ana.romero@unirioja.es</Email>
+    <Homepage>http://www.unirioja.es/cu/anromero/</Homepage>
+  </Author>
+  <Date>March 2010</Date>
+  
+  <Copyright>
+    &copyright; 2010 by Mohamed Barakat and Ana Romero<P/>
+    
+    This package may be distributed under the terms and conditions of the
+    GNU Public License Version 2.
+  </Copyright>
+  
+<Acknowledgements>
+  
+  We would like to thank Francis Sergeraert and Julio Rubio.
+  
+</Acknowledgements>
+
+</TitlePage>

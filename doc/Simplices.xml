@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+
+  Simplices.xml            SimplicialObjects package documentation            Mohamed Barakat
+                                                                                   Ana Romero
+
+         Copyright (C) 2010 Mohamed Barakat and Ana Romero
+
+-->
+
+<Chapter Label="Simplices">
+<Heading>Simplices</Heading>
+
+<Section Label="Simplices:Category">
+<Heading>Simplices: Category and Representations</Heading>
+
+<#Include Label="IsSimplex">
+<#Include Label="IsSimplexRep">
+
+</Section>
+
+<Section Label="Simplices:Constructors">
+<Heading>Simplices: Constructors</Heading>
+
+</Section>
+
+<Section Label="Simplices:Properties">
+<Heading>Simplices: Properties</Heading>
+
+</Section>
+
+<Section Label="Simplices:Attributes">
+<Heading>Simplices: Attributes</Heading>
+
+<!-- the following attributes are intrinsic in the sense that
+     they can safely be attached to any copy of the sheaf -->
+
+</Section>
+
+<Section Label="Simplices:LISMP">
+<Heading>&LISMP;: Logical Implications for Simplices</Heading>
+
+</Section>
+
+<Section Label="Simplices:Operations">
+<Heading>Simplices: Operations and Functions</Heading>
+
+</Section>
+<!-- ############################################################ -->
+
+</Chapter>
