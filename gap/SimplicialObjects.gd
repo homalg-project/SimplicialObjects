@@ -50,3 +50,7 @@ DeclareOperation( "[]",
 
 DeclareGlobalFunction( "FaceDegeneraciesComposition" );
 
+DeclareGlobalFunction( "DegeneracyComposition" );
+
+DeclareGlobalFunction( "DegeneraciesComposition" );
+

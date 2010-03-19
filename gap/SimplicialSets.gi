@@ -62,13 +62,32 @@ InstallMethod( FaceMaps,
     f := X!.FaceOfNonDegenerateSimplex;
     
     facemaps := function( i, sigma )
-        local d, dg, data;
+        local d, dg, data, commutation, face;
         
         d := Dimension( sigma );
+        
+        if d = 0 then
+            Error( "there are no face maps for dimension 0\n" );
+        elif i < 0 or i > d then
+            Error( "The first argument must be a nonnegative integer less or equal to ", d, " but received ", i, "\n" );
+        fi;
+        
         dg := ListOfDegeneracies( sigma );
         data := DataForNonDegenerateSimplex( sigma );
         
+        commutation := FaceDegeneraciesComposition( i, dg );
         
+        face := commutation[2];
+        
+        if face = fail then
+            return Simplex( d - 1, commutation[1], data );
+        fi;
+        
+        data := f( face, d - Length( dg ), data );
+        
+        dg := DegeneraciesComposition( commutation[1], data[1] );
+        
+        return Simplex( d - 1, dg, data[2] );
         
     end;
     

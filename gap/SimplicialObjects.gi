@@ -59,7 +59,7 @@ end );
 
 ##  <#GAPDoc Label="FaceDegeneraciesComposition">
 ##  <ManSection>
-##    <Attr Arg="i, etas " Name="FaceDegeneraciesComposition"/>
+##    <Attr Arg="i, etas" Name="FaceDegeneraciesComposition"/>
 ##    <Returns>a list</Returns>
 ##    <Description>
 ##      This function returns a 2-element list. The first entry is a possibly
@@ -111,6 +111,88 @@ InstallGlobalFunction( FaceDegeneraciesComposition,
     else    # i = eta1 or i = eta1 + 1
         return [ etas{[ 2 .. l ]}, fail ];
     fi;
+    
+end );
+
+##  <#GAPDoc Label="DegeneracyComposition">
+##  <ManSection>
+##    <Attr Arg="i, etas" Name="DegeneracyComposition"/>
+##    <Returns>a list</Returns>
+##    <Description>
+##      Compute the composition of the <A>i</A>th degeneracy map with the list
+##      of sorted degeneracy degrees <A>etas</A> and return the resulting list of sorted
+##      degeneracy degrees.
+##      <Example><![CDATA[
+##  gap> DegeneracyComposition( 1, [ ] );
+##  [ 1 ]
+##  gap> DegeneracyComposition( 1, [ 0 ] );
+##  [ 1, 0 ]
+##  gap> DegeneracyComposition( 1, [ 1 ] );
+##  [ 2, 1 ]
+##  gap> DegeneracyComposition( 1, [ 2 ] );
+##  [ 3, 1 ]
+##  gap> DegeneracyComposition( 1, [ 3, 2, 0 ] );
+##  [ 4, 3, 1, 0 ]
+##  ]]></Example>
+##    </Description>
+##  </ManSection>
+##  <#/GAPDoc>
+##
+InstallGlobalFunction( DegeneracyComposition,
+  function( i, etas )
+    local l, eta1;
+    
+    l := Length( etas );
+    
+    if l = 0 then
+        return [ i ];
+    fi;
+    
+    eta1 := etas[1];
+    
+    if i > eta1 then
+        return Concatenation( [ i ], etas );
+    fi;
+    
+    return Concatenation( [ eta1 + 1 ], DegeneracyComposition( i, etas{[ 2 .. l ]} ) );
+    
+end );
+
+##  <#GAPDoc Label="DegeneraciesComposition">
+##  <ManSection>
+##    <Attr Arg="etas1, etas2" Name="DegeneraciesComposition"/>
+##    <Returns>a list</Returns>
+##    <Description>
+##      Compute the composition of the two lists of sorted degeneracy degrees <A>etas1</A> and <A>etas2</A>.
+##      The result is again a list of sorted degeneracy degrees.
+##      degeneracy degrees.
+##      <Example><![CDATA[
+##  gap> DegeneraciesComposition( [ ], [ ] );
+##  [  ]
+##  gap> DegeneraciesComposition( [ ], [ 1 ] );
+##  [ 1 ]
+##  gap> DegeneraciesComposition( [ 1 ], [ ] );
+##  [ 1 ]
+##  gap> DegeneraciesComposition( [ 4, 2 ], [ 5, 3, 1 ] );
+##  [ 7, 5, 4, 2, 1 ]
+##  ]]></Example>
+##    </Description>
+##  </ManSection>
+##  <#/GAPDoc>
+##
+InstallGlobalFunction( DegeneraciesComposition,
+  function( etas1, etas2 )
+    local l;
+    
+    l := Length( etas1 );
+    
+    if l = 0 then
+        return etas2;
+    elif IsEmpty( etas2 ) then
+        return etas1;
+    fi;
+    
+    return DegeneraciesComposition( etas1{[ 1 .. l - 1 ]}, DegeneracyComposition( etas1[l], etas2 ) );
     
 end );
 

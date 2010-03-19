@@ -8,15 +8,15 @@ s := function( d )
     return SetOfSimplices( L );
 end;
 
-f := function( i, d, s, l );
+f := function( i, d, data );
     
     if i = 0 then
-        return Simplex( d - 1, [ ], s{[ 2 .. l ]} );
+        return [ [ ], data{[ 2 .. d ]} ];
     elif i = d then
-        return Simplex( d - 1, [ ], s{[ 1 .. l - 1 ]} );
+        return [ [ ], data{[ 1 .. d - 1 ]} ];
     fi;
     
-    return Simplex( d - 1, [ i - 1 ], s{[ 1 .. l - 2 ]} );
+    return [ [ i - 1 ], data{[ 1 .. d - 2 ]} ];
     
 end;
 

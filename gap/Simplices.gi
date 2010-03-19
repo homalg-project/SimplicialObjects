@@ -133,7 +133,7 @@ InstallMethod( ViewObj,
         fi;
     fi;
     
-    Print( " simplex>" );
+    Print( " ", Dimension( o ), "-simplex>" );
     
 end );
 
@@ -144,7 +144,18 @@ InstallMethod( Display,
         
   function( o )
     
-    Print( o!.NonDegenerateSimplex, "\n" );
+    Print( "(", ListOfDegeneracies( o ), ")", DataForNonDegenerateSimplex( o ), "\n" );
+    
+end );
+
+##
+InstallMethod( Display,
+        "a simplex",
+        [ IsSimplex and IsNonDegenerate ],
+        
+  function( o )
+    
+    Print( DataForNonDegenerateSimplex( o ), "\n" );
     
 end );
 
