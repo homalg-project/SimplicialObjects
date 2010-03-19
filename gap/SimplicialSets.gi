@@ -115,7 +115,12 @@ InstallMethod( SimplicialSet,
   function( basepoint, s, f )
     local X, type;
     
-    X := rec( BasePoint := basepoint, FunctorOnObjects := s, FaceOfNonDegenerateSimplex := f );
+    X := rec(
+             BasePoint := basepoint,
+	     FunctorOnObjects :=
+	       d -> SetOfSimplices( List( s( d ), data -> Simplex( d, [ ], data ) ) ),
+	     FaceOfNonDegenerateSimplex := f
+	     );
     
     type := TheTypeSimplicialSet;
     
@@ -123,6 +128,68 @@ InstallMethod( SimplicialSet,
     Objectify( type, X );
     
     return X;
+    
+end );
+
+##
+InstallMethod( EilenbergMacLaneSpace,
+        "a finite group and an integer",
+	[ IsGroup and IsFinite, IsInt ],
+
+  function( G, i )
+    local bb, G_1, addElement, s, f, KG1;
+    
+    if i <> 1 then
+        Error( "This case is not supported yet\n" );
+    fi;
+    
+    bb := Simplex( 0, [ ], [ ] );
+    
+    G_1 := Filtered( AsList( G ), function( g ) return not IsOne( g ); end );
+     
+    addElement := function( l, element )
+      return List( l, e -> Concatenation( e, [ element ] ) );
+    end;
+    
+    s := function( d )
+      local s_1;
+      
+      if d = 0 then
+          return [ [ ] ];
+      fi;
+      
+      s_1 := s( d - 1 );
+      
+      return Concatenation( List( G_1, g -> addElement( s_1, g ) ) );
+      
+    end;
+    
+    f := function( i, d, data )
+      local g;
+      
+      if i = 0 then
+          return [ [ ], data{[ 2 .. d ]} ];
+      elif i = d then
+          return [ [ ], data{[ 1 .. d - 1 ]} ];
+      fi;
+      
+      g := data[i - 1] * data[i];
+      
+      if IsOne( g ) then
+          return [ [ i - 1 ], Concatenation( data{[ 1 .. i - 2 ]}, data{[ i + 1 .. d ]} ) ];
+      fi;
+      
+      return [ [ ], Concatenation( data{[ 1 .. i - 2 ]}, [ g ], data{[ i + 1 .. d ]} ) ];
+      
+    end;
+    
+    KG1 := SimplicialSet( bb, s, f );
+    
+    if HasName( G ) then
+        SetName( KG1, Concatenation( "K(", Name( G ), ",1)" ) );
+    fi;
+    
+    return KG1;
     
 end );
 

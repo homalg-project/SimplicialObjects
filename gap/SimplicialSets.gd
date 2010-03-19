@@ -73,3 +73,5 @@ DeclareOperation( "SimplicialSet",
 DeclareOperation( "SimplicialSet",
     [ IsFunction, IsFunction ] );
 
+DeclareOperation( "EilenbergMacLaneSpace",
+    [ IsGroup, IsInt ] );

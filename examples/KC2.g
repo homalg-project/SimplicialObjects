@@ -3,9 +3,7 @@ LoadPackage( "SimplicialObjects" );
 bb := Simplex( 0, [ ], [ ] );
 
 s := function( d )
-    local L;
-    L := [ Simplex( d, [ ], ListWithIdenticalEntries( d, (1,2) ) ) ];
-    return SetOfSimplices( L );
+    return [ ListWithIdenticalEntries( d, (1,2) ) ];
 end;
 
 f := function( i, d, data );

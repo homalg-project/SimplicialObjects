@@ -146,7 +146,7 @@ InstallMethod( ViewObj,
     if n = 1 then
         Print( "simplex>" );
     else
-        Print( "simplices" );
+        Print( "simplices>" );
     fi;
     
 end );
