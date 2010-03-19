@@ -107,16 +107,29 @@ end );
 #
 ####################################
 
+##  <#GAPDoc Label="SimplicialSet">
+##  <ManSection>
+##    <Oper Arg="s, f" Name="SimplicialSet" Label="constructor for simplicial sets"/>
+##    <Returns>a simplicial set</Returns>
+##    <Description>
+##      This constructor returns the simplicial set which is a functor with
+##      functor on objects given by the function <A>s</A> depending on a dimension
+##      (returning a list of data of non-degenerate simplices)
+##      and face maps on non-degenerate simplices given by their internal data for
+##      each dimension.
+##      <#Include Label="K(C2,1)">
+##    </Description>
+##  </ManSection>
+##  <#/GAPDoc>
 ##
 InstallMethod( SimplicialSet,
         "a simplicial set",
-        [ IsSimplex and IsNonDegenerate, IsFunction, IsFunction ],
+        [ IsFunction, IsFunction ],
         
-  function( basepoint, s, f )
+  function( s, f )
     local X, type;
     
     X := rec(
-             BasePoint := basepoint,
              FunctorOnObjects :=
                d -> SetOfSimplices( List( s( d ), data -> Simplex( d, [ ], data ) ) ),
              FaceOfNonDegenerateSimplex := f
@@ -131,19 +144,29 @@ InstallMethod( SimplicialSet,
     
 end );
 
+##  <#GAPDoc Label="EilenbergMacLaneSpace">
+##  <ManSection>
+##    <Oper Arg="G[, i]" Name="EilenbergMacLaneSpace" Label="constructor for Eilenberg-MacLane space"/>
+##    <Returns>a simplicial set</Returns>
+##    <Description>
+##      This constructor returns the standard simplicial set for the
+##      Eilenberg-MacLane space <M>K(</M><A>G,i</A><M>)</M>. If the nonnegative
+##      integer <A>i</A> is not specified it is set to <M>1</M>.
+##      <#Include Label="K(S3,1)">
+##    </Description>
+##  </ManSection>
+##  <#/GAPDoc>
 ##
 InstallMethod( EilenbergMacLaneSpace,
         "a finite group and an integer",
 	[ IsGroup and IsFinite, IsInt ],
 
   function( G, i )
-    local bb, G_1, addElement, s, f, KG1;
+    local G_1, addElement, s, f, KG1;
     
     if i <> 1 then
         Error( "This case is not supported yet\n" );
     fi;
-    
-    bb := Simplex( 0, [ ], [ ] );
     
     G_1 := Filtered( AsList( G ), function( g ) return not IsOne( g ); end );
      
@@ -183,7 +206,7 @@ InstallMethod( EilenbergMacLaneSpace,
       
     end;
     
-    KG1 := SimplicialSet( bb, s, f );
+    KG1 := SimplicialSet( s, f );
     
     if HasName( G ) then
         SetName( KG1, Concatenation( "K(", Name( G ), ",1)" ) );

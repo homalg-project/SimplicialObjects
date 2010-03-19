@@ -57,6 +57,19 @@ DeclareCategory( "IsSimplicialSet",
 DeclareAttribute( "FaceMaps",
         IsSimplicialSet );
 
+##  <#GAPDoc Label="AssociatedChainComplex">
+##  <ManSection>
+##    <Attr Arg="X" Name="AssociatedChainComplex"/>
+##    <Returns>a complex</Returns>
+##    <Description>
+##      The chain complex associated to the simplicial set <A>X</A>.
+##    </Description>
+##  </ManSection>
+##  <#/GAPDoc>
+##
+DeclareAttribute( "AssociatedChainComplex",
+        IsSimplicialSet );
+
 ####################################
 #
 # global functions and operations:
@@ -66,9 +79,6 @@ DeclareAttribute( "FaceMaps",
 # basic operations:
 
 # constructors:
-
-DeclareOperation( "SimplicialSet",
-    [ IsSimplex, IsFunction, IsFunction ] );
 
 DeclareOperation( "SimplicialSet",
     [ IsFunction, IsFunction ] );

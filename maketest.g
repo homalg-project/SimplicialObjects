@@ -19,6 +19,9 @@ list := [
          "../gap/SetsOfSimplices.gi",
          "../gap/SimplicialSets.gd",
          "../gap/SimplicialSets.gi",
+         "../examples/Simplex.g",
+         "../examples/KC2.g",
+         "../examples/KS3.g",
          ];
 
 MyTestManualExamples :=

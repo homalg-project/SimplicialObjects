@@ -23,6 +23,9 @@
 <Section Label="SimplicialSets:Constructors">
 <Heading>Simplicial Sets: Constructors</Heading>
 
+<#Include Label="SimplicialSet">
+<#Include Label="EilenbergMacLaneSpace">
+
 </Section>
 
 <Section Label="SimplicialSets:Properties">
@@ -34,6 +37,7 @@
 <Heading>Simplicial Sets: Attributes</Heading>
 
 <#Include Label="FaceMaps">
+<#Include Label="AssociatedChainComplex">
 
 <!-- the following attributes are intrinsic in the sense that
      they can safely be attached to any copy of the object -->
