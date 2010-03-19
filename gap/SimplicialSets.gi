@@ -193,6 +193,17 @@ InstallMethod( EilenbergMacLaneSpace,
     
 end );
 
+##
+InstallMethod( EilenbergMacLaneSpace,
+        "a finite group",
+	[ IsGroup ],
+
+  function( G )
+    
+    return EilenbergMacLaneSpace( G, 1 );
+    
+end );
+
 ####################################
 #
 # View, Print, and Display methods:
