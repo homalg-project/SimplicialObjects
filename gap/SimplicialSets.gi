@@ -117,10 +117,10 @@ InstallMethod( SimplicialSet,
     
     X := rec(
              BasePoint := basepoint,
-	     FunctorOnObjects :=
-	       d -> SetOfSimplices( List( s( d ), data -> Simplex( d, [ ], data ) ) ),
-	     FaceOfNonDegenerateSimplex := f
-	     );
+             FunctorOnObjects :=
+               d -> SetOfSimplices( List( s( d ), data -> Simplex( d, [ ], data ) ) ),
+             FaceOfNonDegenerateSimplex := f
+             );
     
     type := TheTypeSimplicialSet;
     
