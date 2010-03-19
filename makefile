@@ -30,5 +30,5 @@ towww: archive
 	cp doc/manual.pdf ${WEBPOS}/SimplicialObjects.pdf
 	cp doc/*.{css,html} ${WEBPOS}
 	cp ${WEBPOS}/* ${WEBPOS_FINAL}
-#	cp ../tar/SimplicialObjects.tar.gz ${WEBPOS}
+	cp ../tar/SimplicialObjects.tar.gz ${WEBPOS}
 
