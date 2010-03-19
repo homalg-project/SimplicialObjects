@@ -1,6 +1,6 @@
 #############################################################################
 ##
-##  SimplicialSets.gd        SimplicialObjects package       Mohamed Barakat
+##  Simplices.gd             SimplicialObjects package       Mohamed Barakat
 ##                                                                Ana Romero
 ##
 ##  Copyright 2010 Mohamed Barakat and Ana Romero
@@ -87,6 +87,14 @@ DeclareAttribute( "Dimension",
 # global functions and operations:
 #
 ####################################
+
+# basic operations:
+
+DeclareOperation( "DataForNonDegenerateSimplex",
+    [ IsSimplex ] );
+
+DeclareOperation( "ListOfDegeneracies",
+    [ IsSimplex ] );
 
 # constructors:
 

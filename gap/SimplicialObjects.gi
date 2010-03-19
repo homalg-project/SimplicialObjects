@@ -19,7 +19,7 @@
 ##    <Listing Type="Code"><![CDATA[
 DeclareRepresentation( "IsSimplicialObjectRep",
         IsSimplicialObject,
-        [ "FunctorOnObjects", "Faces", "Degeneracies" ] );
+        [ "FunctorOnObjects", "FaceMorphisms", "DegeneracyMorphisms" ] );
 ##  ]]></Listing>
 ##    </Description>
 ##  </ManSection>
@@ -45,3 +45,42 @@ BindGlobal( "TheTypeSimplicialObject",
 # methods for operations:
 #
 ####################################
+
+##
+InstallMethod( \[\],
+        "a simplicial object and a nonnegative integer",
+        [ IsSimplicialObjectRep, IsInt ],
+        
+  function( S, d )
+    
+    return S!.FunctorOnObjects( d );
+    
+end );
+
+##
+InstallGlobalFunction( FaceDegeneraciesComposition,
+  function( i, etas )
+    local l, eta1, fdc;
+    
+    l := Length( etas );
+    
+    if l = 0 then
+        return [ etas, i ];
+    fi;
+    
+    eta1 := etas[1];
+    
+    if i = fail then
+        return [ etas, fail ];
+    elif i < eta1 then
+        fdc := FaceDegeneraciesComposition( i, etas{[ 2 .. l ]} );
+        return [ Concatenation( [ eta1 - 1 ], fdc[1] ), fdc[2] ];
+    elif i > eta1 + 1 then
+        fdc := FaceDegeneraciesComposition( i - 1, etas{[ 2 .. l ]} );
+        return [ Concatenation( [ eta1 ], fdc[1] ), fdc[2] ];
+    else    # i = eta1 or i = eta1 + 1
+        return [ etas{[ 2 .. l ]}, fail ];
+    fi;
+    
+end );
+

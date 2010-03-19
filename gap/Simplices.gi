@@ -1,6 +1,6 @@
 #############################################################################
 ##
-##  SimplicialSets.gd        SimplicialObjects package       Mohamed Barakat
+##  Simplices.gd             SimplicialObjects package       Mohamed Barakat
 ##                                                                Ana Romero
 ##
 ##  Copyright 2010 Mohamed Barakat and Ana Romero
@@ -19,7 +19,7 @@
 ##    <Listing Type="Code"><![CDATA[
 DeclareRepresentation( "IsSimplexRep",
         IsSimplex,
-        [  ] );
+        [ "ListOfDegeneracies", "DataForNonDegenerateSimplex" ] );
 ##  ]]></Listing>
 ##    </Description>
 ##  </ManSection>
@@ -46,6 +46,28 @@ BindGlobal( "TheTypeSimplex",
 #
 ####################################
 
+##
+InstallMethod( DataForNonDegenerateSimplex,
+        "a simplex",
+        [ IsSimplex ],
+        
+  function( sigma )
+    
+    return sigma!.DataForNonDegenerateSimplex;
+    
+end );
+
+##
+InstallMethod( ListOfDegeneracies,
+        "a simplex",
+        [ IsSimplex ],
+        
+  function( sigma )
+    
+    return sigma!.ListOfDegeneracies;
+    
+end );
+
 ####################################
 #
 # constructor functions and methods:
@@ -54,13 +76,13 @@ BindGlobal( "TheTypeSimplex",
 
 ##
 InstallMethod( Simplex,
-        "a list and object",
+        "a nonnegative integers, a list, and object",
         [ IsInt, IsList, IsObject ],
         
   function( d, L, o )
     local sigma, type;
     
-    sigma := rec( Degeneracies := L, NonDegenerateSimplex := o );
+    sigma := rec( ListOfDegeneracies := L, DataForNonDegenerateSimplex := o );
     
     type := TheTypeSimplex;
     
@@ -96,7 +118,7 @@ end );
 
 ##
 InstallMethod( ViewObj,
-        "for homalg matrices",
+        "a simplex",
         [ IsSimplex ],
         
   function( o )
@@ -117,7 +139,7 @@ end );
 
 ##
 InstallMethod( Display,
-        "for homalg matrices",
+        "a simplex",
         [ IsSimplex ],
         
   function( o )

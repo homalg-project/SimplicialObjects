@@ -19,5 +19,8 @@ ReadPackage( "SimplicialObjects", "gap/SimplicialObjects.gi" );
 ReadPackage( "SimplicialObjects", "gap/Simplices.gi" );
 
 ##
+ReadPackage( "SimplicialObjects", "gap/SetsOfSimplices.gi" );
+
+##
 ReadPackage( "SimplicialObjects", "gap/SimplicialSets.gi" );
 

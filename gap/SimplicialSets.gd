@@ -38,11 +38,38 @@ DeclareCategory( "IsSimplicialSet",
 #
 ####################################
 
+####################################
+#
+# attributes:
+#
+####################################
+
+##  <#GAPDoc Label="FaceMaps">
+##  <ManSection>
+##    <Attr Arg="X" Name="FaceMaps"/>
+##    <Returns>a nonnegative integer</Returns>
+##    <Description>
+##      A function which encodes all face maps of the simplicial set <A>X</A>.
+##    </Description>
+##  </ManSection>
+##  <#/GAPDoc>
+##
+DeclareAttribute( "FaceMaps",
+        IsSimplicialSet );
+
+####################################
+#
+# global functions and operations:
+#
+####################################
+
+# basic operations:
+
 # constructors:
 
-DeclareConstructor( "SimplicialSet",
+DeclareOperation( "SimplicialSet",
     [ IsSimplex, IsFunction, IsFunction ] );
 
-DeclareConstructor( "SimplicialSet",
+DeclareOperation( "SimplicialSet",
     [ IsFunction, IsFunction ] );
 

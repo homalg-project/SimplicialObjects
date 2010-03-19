@@ -33,8 +33,10 @@
 <Section Label="SimplicialSets:Attributes">
 <Heading>Simplicial Sets: Attributes</Heading>
 
+<#Include Label="FaceMaps">
+
 <!-- the following attributes are intrinsic in the sense that
-     they can safely be attached to any copy of the sheaf -->
+     they can safely be attached to any copy of the object -->
 
 </Section>
 

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+
+  SetsOfSimplices.xml           SimplicialObjects package documentation            Mohamed Barakat
+                                                                                        Ana Romero
+
+         Copyright (C) 2010 Mohamed Barakat and Ana Romero
+
+-->
+
+<Chapter Label="SetsOfSimplices">
+<Heading>Sets of Simplices</Heading>
+
+<Section Label="SetsOfSimplices:Category">
+<Heading>Sets of Simplices: Category and Representations</Heading>
+
+<#Include Label="IsSetOfSimplices">
+<#Include Label="IsSetOfSimplicesRep">
+
+</Section>
+
+<Section Label="SetsOfSimplices:Constructors">
+<Heading>Sets of Simplices: Constructors</Heading>
+
+</Section>
+
+<Section Label="SetsOfSimplices:Properties">
+<Heading>Sets of Simplices: Properties</Heading>
+
+</Section>
+
+<Section Label="SetsOfSimplices:Attributes">
+<Heading>Sets of Simplices: Attributes</Heading>
+
+<#Include Label="AssociatedSimplicialSet">
+
+<!-- the following attributes are intrinsic in the sense that
+     they can safely be attached to any copy of the object -->
+
+<#Include Label="Dimension">
+<#Include Label="NrNonDegenerateSimplices">
+<#Include Label="NrDegenerateSimplices">
+
+/Section>
+
+<Section Label="SetsOfSimplices:LISOS">
+<Heading>&LISOS;: Logical Implications for Sets of Simplices</Heading>
+
+</Section>
+
+<Section Label="SetsOfSimplices:Operations">
+<Heading>Sets of Simplices: Operations and Functions</Heading>
+
+</Section>
+<!-- ############################################################ -->
+
+</Chapter>

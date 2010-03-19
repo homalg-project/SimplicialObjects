@@ -37,3 +37,16 @@ DeclareCategory( "IsSimplicialObject",
 #
 ####################################
 
+####################################
+#
+# global functions and operations:
+#
+####################################
+
+# basic operations:
+
+DeclareOperation( "[]",
+    [ IsSimplicialObject, IsInt ] );
+
+DeclareGlobalFunction( "FaceDegeneraciesComposition" );
+

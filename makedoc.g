@@ -18,6 +18,8 @@ list := [
          "../gap/SimplicialObjects.gi",
          "../gap/Simplices.gd",
          "../gap/Simplices.gi",
+         "../gap/SetsOfSimplices.gd",
+         "../gap/SetsOfSimplices.gi",
          "../gap/SimplicialSets.gd",
          "../gap/SimplicialSets.gi",
          ];

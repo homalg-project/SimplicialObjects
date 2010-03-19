@@ -28,6 +28,7 @@
 	  <!ENTITY LIMOS "<Package>LIMOS</Package>">
 	  <!ENTITY LISMO "<Package>LISMO</Package>">
 	  <!ENTITY LISMP "<Package>LISMP</Package>">
+	  <!ENTITY LISOS "<Package>LISOS</Package>">
 	  <!ENTITY LISMS "<Package>LISMS</Package>">
 	  <!ENTITY ExamplesForHomalg "<Package>ExamplesForHomalg</Package>">
 	  <!ENTITY alexander "<Package>alexander</Package>">
