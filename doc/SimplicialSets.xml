@@ -37,6 +37,7 @@
 <Heading>Simplicial Sets: Attributes</Heading>
 
 <#Include Label="FaceMaps">
+<#Include Label="RingOfAssociatedChainComplex">
 <#Include Label="AssociatedChainComplex">
 
 <!-- the following attributes are intrinsic in the sense that

@@ -95,6 +95,36 @@ InstallMethod( FaceMaps,
     
 end );
 
+##
+InstallMethod( RingOfAssociatedChainComplex,
+        "a simplicial set",
+        [ IsSimplicialSet ],
+        
+  X -> HOMALG_MATRICES.ZZ );
+
+##
+InstallMethod( AssociatedChainComplex,
+        "a simplicial set",
+        [ IsSimplicialSet ],
+        
+  function( X )
+    local R, X0, l0, C;
+    
+    R := RingOfAssociatedChainComplex( X );
+    
+    X0 := X!.FunctorOnObjects( 0 );
+    
+    l0 := NrNonDegenerateSimplices( X0 );
+    
+    C := HomalgComplex( l0 * R );
+    
+    ## i > 0
+    C!.ObjectConstructor := i -> NrNonDegenerateSimplices( X[i] ) * R;
+    
+    return C;
+    
+end );
+
 ####################################
 #
 # methods for operations:

@@ -57,6 +57,19 @@ DeclareCategory( "IsSimplicialSet",
 DeclareAttribute( "FaceMaps",
         IsSimplicialSet );
 
+##  <#GAPDoc Label="RingOfAssociatedChainComplex">
+##  <ManSection>
+##    <Attr Arg="X" Name="RingOfAssociatedChainComplex"/>
+##    <Returns>a complex</Returns>
+##    <Description>
+##      The ring of the chain complex associated to the simplicial set <A>X</A>.
+##    </Description>
+##  </ManSection>
+##  <#/GAPDoc>
+##
+DeclareAttribute( "RingOfAssociatedChainComplex",
+        IsSimplicialSet );
+
 ##  <#GAPDoc Label="AssociatedChainComplex">
 ##  <ManSection>
 ##    <Attr Arg="X" Name="AssociatedChainComplex"/>
