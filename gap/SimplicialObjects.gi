@@ -57,6 +57,36 @@ InstallMethod( \[\],
     
 end );
 
+##  <#GAPDoc Label="FaceDegeneraciesComposition">
+##  <ManSection>
+##    <Attr Arg="i, etas " Name="FaceDegeneraciesComposition"/>
+##    <Returns>a list</Returns>
+##    <Description>
+##      This function returns a 2-element list. The first entry is a possibly
+##      empty list of nonnegative integers. The second entry is a nonnegative
+##      integer or <C>fail</C>. The output describes the result of the composition
+##      of the <A>i</A>th face map with the degeneracies given by the list <A>etas</A>.
+##      The first entry of the output is the list of resulting degeneracies. The
+##      second entry stands for a face map (integer) or the identity operator (fail).
+##      <Example><![CDATA[
+##  gap> FaceDegeneraciesComposition( 1, [ ] );
+##  [ [  ], 1 ]
+##  gap> FaceDegeneraciesComposition( 1, [ 2 ] );
+##  [ [ 1 ], 1 ]
+##  gap> FaceDegeneraciesComposition( 4, [ 2 ] );
+##  [ [ 2 ], 3 ]
+##  gap> FaceDegeneraciesComposition( 2, [ 2 ] );
+##  [ [  ], fail ]
+##  gap> FaceDegeneraciesComposition( 3, [ 2 ] );
+##  [ [  ], fail ]
+##  gap> FaceDegeneraciesComposition( 1, [ 4, 1, 0 ] );
+##  [ [ 3, 0 ], fail ]
+##  gap> FaceDegeneraciesComposition( 1, [ 4, 3, 2 ] );
+##  [ [ 3, 2, 1 ], 1 ]
+##  ]]></Example>
+##    </Description>
+##  </ManSection>
+##  <#/GAPDoc>
 ##
 InstallGlobalFunction( FaceDegeneraciesComposition,
   function( i, etas )

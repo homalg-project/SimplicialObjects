@@ -46,6 +46,8 @@
 <Section Label="SimplicialObjects:Operations">
 <Heading>Simplicial Objects: Operations and Functions</Heading>
 
+<#Include Label="FaceDegeneraciesComposition">
+
 </Section>
 <!-- ############################################################ -->
 
