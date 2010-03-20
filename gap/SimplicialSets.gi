@@ -118,8 +118,46 @@ InstallMethod( AssociatedChainComplex,
     
     C := HomalgComplex( l0 * R );
     
+    C!.SimplicialSet := X;
+    
+    ## d > 0
+    C!.ObjectConstructor := d -> NrNonDegenerateSimplices( X[d] ) * R;
+    
     ## i > 0
-    C!.ObjectConstructor := i -> NrNonDegenerateSimplices( X[i] ) * R;
+    C!.MorphismConstructor :=
+      function( d )
+        local Cd, Cd_1, boundary, one, Xd, Xd_1, l, n, i, fs, j;
+        
+        Cd := CertainObject( C, d );
+        Cd_1 := CertainObject( C, d - 1 );
+        
+        boundary := HomalgInitialMatrix( Rank( Cd ), Rank( Cd_1 ), R );
+        
+        one := One( R );
+        
+        Xd := ListOfNonDegenerateSimplices( X[d] );
+        
+        if d = 1 then
+            Xd_1 := ListOfNonDegenerateSimplices( X!.FunctorOnObjects( 0 ) );
+        else
+            Xd_1 := ListOfNonDegenerateSimplices( X[d - 1] );
+        fi;
+        
+        l := Length( Xd );
+        
+        for n in [ 0 .. d ] do
+            for i in [ 1 .. l ] do
+                fs := FaceMaps( X )( n, Xd[i] );
+                if IsNonDegenerate( fs ) then
+                    j := Position( Xd_1, fs );
+                    AddToEntryOfHomalgMatrix( boundary, i, j, (-1)^n * one );
+                fi;
+            od;
+        od;
+        
+        return HomalgMap( boundary, Cd, Cd_1 );
+        
+      end;
     
     return C;
     

@@ -68,6 +68,25 @@ InstallMethod( ListOfDegeneracies,
     
 end );
 
+##
+InstallMethod( EQ,
+        "two simplices",
+        [ IsSimplex, IsSimplex ],
+        
+  function( sigma1, sigma2 )
+    
+    if Dimension( sigma1 ) = Dimension( sigma2 ) then
+        if ListOfDegeneracies( sigma1 ) = ListOfDegeneracies( sigma2 ) then
+            if DataForNonDegenerateSimplex( sigma1 ) = DataForNonDegenerateSimplex( sigma2 ) then
+                return true;
+            fi;
+        fi;
+    fi;
+    
+    return false;
+    
+end );
+
 ####################################
 #
 # constructor functions and methods:
