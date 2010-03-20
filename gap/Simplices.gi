@@ -144,7 +144,7 @@ InstallMethod( Display,
         
   function( o )
     
-    Print( "(", ListOfDegeneracies( o ), ")", DataForNonDegenerateSimplex( o ), "\n" );
+    Print( ListOfDegeneracies( o ), "(", DataForNonDegenerateSimplex( o ), ")\n" );
     
 end );
 
@@ -155,7 +155,7 @@ InstallMethod( Display,
         
   function( o )
     
-    Print( DataForNonDegenerateSimplex( o ), "\n" );
+    Print( "(", DataForNonDegenerateSimplex( o ), ")\n" );
     
 end );
 

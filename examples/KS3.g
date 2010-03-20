@@ -10,11 +10,11 @@
 ##  <A set of 1-simplices containing 5 non-degenerate simplices>
 ##  gap> Display( last );
 ##  [
-##  [ (2,3) ]
-##  [ (1,2) ]
-##  [ (1,2,3) ]
-##  [ (1,3,2) ]
-##  [ (1,3) ]
+##  ([ (2,3) ])
+##  ([ (1,2) ])
+##  ([ (1,2,3) ])
+##  ([ (1,3,2) ])
+##  ([ (1,3) ])
 ##  ]
 ##  
 ##  the list of non-degenerate simplices in dimension 1
@@ -23,7 +23,7 @@
 ##  gap> KS3[3][2];
 ##  <A non-degenerate 3-simplex>
 ##  gap> Display( last );
-##  [ (1,2), (2,3), (2,3) ]
+##  ([ (1,2), (2,3), (2,3) ])
 ##  ]]></Example>
 ##  <#/GAPDoc>
 

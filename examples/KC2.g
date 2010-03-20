@@ -25,7 +25,7 @@
 ##  <A set of 1-simplices containing a single non-degenerate simplex>
 ##  gap> Display( last );
 ##  [
-##  [ (1,2) ]
+##  ([ (1,2) ])
 ##  ]
 ##  
 ##  the list of non-degenerate simplices in dimension 1
@@ -33,7 +33,7 @@
 ##  <A set of 3-simplices containing a single non-degenerate simplex>
 ##  gap> Display( last );
 ##  [
-##  [ (1,2), (1,2), (1,2) ]
+##  ([ (1,2), (1,2), (1,2) ])
 ##  ]
 ##  
 ##  the list of non-degenerate simplices in dimension 3
