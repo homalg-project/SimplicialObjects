@@ -24,6 +24,55 @@
 ##  <A non-degenerate 3-simplex>
 ##  gap> Display( last );
 ##  ([ (1,2), (2,3), (2,3) ])
+##  gap> C := AssociatedChainComplex( KS3 );
+##  <A non-zero graded homology object consisting of a single left module at degre\
+##  e 0>
+##  gap> m1 := CertainMorphism( C, 1 );
+##  <A homomorphism of left modules>
+##  gap> Display( m1 );
+##  [ [  0 ],
+##    [  0 ],
+##    [  0 ],
+##    [  0 ],
+##    [  0 ] ]
+##  
+##  the map is currently represented by the above 5 x 1 matrix
+##  gap> m2 := CertainMorphism( C, 2 );
+##  <A homomorphism of left modules>
+##  gap> Display( m2 );
+##  [ [   2,   0,   0,   0,   0 ],
+##    [   1,   1,   0,  -1,   0 ],
+##    [   1,   0,   1,   0,  -1 ],
+##    [   1,  -1,   0,   1,   0 ],
+##    [   1,   0,  -1,   0,   1 ],
+##    [   1,   1,  -1,   0,   0 ],
+##    [   0,   2,   0,   0,   0 ],
+##    [  -1,   1,   1,   0,   0 ],
+##    [   0,   1,   0,   1,  -1 ],
+##    [   0,   1,   0,  -1,   1 ],
+##    [   1,  -1,   1,   0,   0 ],
+##    [   0,   1,   1,   0,  -1 ],
+##    [   0,   0,   2,  -1,   0 ],
+##    [   0,   0,   1,   1,   0 ],
+##    [  -1,   0,   1,   0,   1 ],
+##    [   1,   0,   0,   1,  -1 ],
+##    [  -1,   1,   0,   1,   0 ],
+##    [   0,   0,   1,   1,   0 ],
+##    [   0,   0,  -1,   2,   0 ],
+##    [   0,  -1,   0,   1,   1 ],
+##    [   1,   0,   0,  -1,   1 ],
+##    [   0,   1,  -1,   0,   1 ],
+##    [   0,  -1,   1,   0,   1 ],
+##    [  -1,   0,   0,   1,   1 ],
+##    [   0,   0,   0,   0,   2 ] ]
+##  
+##  the map is currently represented by the above 25 x 5 matrix
+##  gap> H_2 := DefectOfExactness( m2, m1 );
+##  <A left module presented by yet unknown relations for 3 generators>
+##  gap> ByASmallerPresentation( H_2 );
+##  <A cyclic torsion left module presented by 1 relation for a cyclic generator>
+##  gap> Display( H_2 );
+##  Z/< 2 > 
 ##  ]]></Example>
 ##  <#/GAPDoc>
 
@@ -35,3 +84,12 @@ SetName( S3, "S3" );
 
 KS3 := EilenbergMacLaneSpace( S3 );
 
+C := AssociatedChainComplex( KS3 );
+
+m1 := CertainMorphism( C, 1 );
+
+m2 := CertainMorphism( C, 2 );
+
+H_2 := DefectOfExactness( m2, m1 );
+
+ByASmallerPresentation( H_2 );
