@@ -189,7 +189,7 @@ end );
 ##
 InstallMethod( EilenbergMacLaneSpace,
         "a finite group and an integer",
-	[ IsGroup and IsFinite, IsInt ],
+        [ IsGroup and IsFinite, IsInt ],
 
   function( G, i )
     local G_1, addElement, s, f, KG1;
@@ -226,13 +226,13 @@ InstallMethod( EilenbergMacLaneSpace,
           return [ [ ], data{[ 1 .. d - 1 ]} ];
       fi;
       
-      g := data[i - 1] * data[i];
+      g := data[i] * data[i + 1];
       
       if IsOne( g ) then
-          return [ [ i - 1 ], Concatenation( data{[ 1 .. i - 2 ]}, data{[ i + 1 .. d ]} ) ];
+          return [ [ i - 1 ], Concatenation( data{[ 1 .. i - 1 ]}, data{[ i + 2 .. d ]} ) ];
       fi;
       
-      return [ [ ], Concatenation( data{[ 1 .. i - 2 ]}, [ g ], data{[ i + 1 .. d ]} ) ];
+      return [ [ ], Concatenation( data{[ 1 .. i - 1 ]}, [ g ], data{[ i + 2 .. d ]} ) ];
       
     end;
     
@@ -249,7 +249,7 @@ end );
 ##
 InstallMethod( EilenbergMacLaneSpace,
         "a finite group",
-	[ IsGroup ],
+        [ IsGroup ],
 
   function( G )
     
