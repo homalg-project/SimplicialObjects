@@ -47,7 +47,7 @@ DeclareCategory( "IsSimplicialSet",
 ##  <#GAPDoc Label="FaceMaps">
 ##  <ManSection>
 ##    <Attr Arg="X" Name="FaceMaps"/>
-##    <Returns>a nonnegative integer</Returns>
+##    <Returns>a function</Returns>
 ##    <Description>
 ##      A function which encodes all face maps of the simplicial set <A>X</A>.
 ##    </Description>
@@ -60,7 +60,7 @@ DeclareAttribute( "FaceMaps",
 ##  <#GAPDoc Label="RingOfAssociatedChainComplex">
 ##  <ManSection>
 ##    <Attr Arg="X" Name="RingOfAssociatedChainComplex"/>
-##    <Returns>a complex</Returns>
+##    <Returns>a ring</Returns>
 ##    <Description>
 ##      The ring of the chain complex associated to the simplicial set <A>X</A>.
 ##    </Description>
@@ -75,7 +75,8 @@ DeclareAttribute( "RingOfAssociatedChainComplex",
 ##    <Attr Arg="X" Name="AssociatedChainComplex"/>
 ##    <Returns>a complex</Returns>
 ##    <Description>
-##      The chain complex associated to the simplicial set <A>X</A>.
+##      The chain complex associated to the simplicial set <A>X</A> over the ring
+##      <M>R :=</M><C>RingOfAssociatedChainComplex</C><M>(</M> <A>X</A> <M>)</M> (&see; <Ref Label="RingOfAssociatedChainComplex"/>).
 ##    </Description>
 ##  </ManSection>
 ##  <#/GAPDoc>
