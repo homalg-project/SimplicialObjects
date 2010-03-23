@@ -53,6 +53,10 @@ InstallMethod( \[\],
         
   function( S, d )
     
+    if d < 0 then
+        Error( "simplicial sets are not defined for negative integers\n" );
+    fi;
+    
     return S!.FunctorOnObjects( d );
     
 end );
