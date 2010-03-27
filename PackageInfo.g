@@ -27,13 +27,13 @@ Subtitle := "Topology via Simplicial Sets",
 ##  See '?Extending: Version Numbers' in GAP help for an explanation
 ##  of valid version numbers. For an automatic package distribution update
 ##  you must provide a new version number even after small changes.
-Version := "2010.03.23",
+Version := "2010.03.25",
 ##  Please adjust also the VERSION file in the package directory when
 ##  changing this.
 
 ##  Release date of the current version in dd/mm/yyyy format.
 # 
-Date := "23/03/2010",
+Date := "25/03/2010",
 
 ##  URL of the archive(s) of the current package release, but *without*
 ##  the format extension(s), like '.zoo', which are given next.
@@ -202,7 +202,7 @@ PackageInfoURL :=
 #   is an example of how to create a <span class=\"pkgname\">GAP</span> \
 #   package. It has little functionality except for being a package",
 #
-PackageWWWHome := "http://homalg.math.rwth-aachen.de/index.php/unreleased/simplicialsets",
+PackageWWWHome := "http://homalg.math.rwth-aachen.de/index.php/unreleased/simplicialobjects",
 #
 #               
 ##  Here is the information on the help books of the package, used for
