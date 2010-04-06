@@ -29,6 +29,8 @@ towww: archive
 	cp README ${WEBPOS}/README.SimplicialObjects
 	cp doc/manual.pdf ${WEBPOS}/SimplicialObjects.pdf
 	cp doc/*.{css,html} ${WEBPOS}
+	rm -f ${WEBPOS}/*.tar.gz
+	mv ../tar/SimplicialObjects.tar.gz ${WEBPOS}/SimplicialObjects-`cat VERSION`.tar.gz
+	rm -f ${WEBPOS_FINAL}/*.tar.gz
 	cp ${WEBPOS}/* ${WEBPOS_FINAL}
-	cp ../tar/SimplicialObjects.tar.gz ${WEBPOS}
-
+	ln -s SimplicialObjects-`cat VERSION`.tar.gz ${WEBPOS_FINAL}/SimplicialObjects.tar.gz
