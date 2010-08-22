@@ -27,13 +27,13 @@ Subtitle := "Topology via Simplicial Sets",
 ##  See '?Extending: Version Numbers' in GAP help for an explanation
 ##  of valid version numbers. For an automatic package distribution update
 ##  you must provide a new version number even after small changes.
-Version := "2010.04.04",
+Version := "2010.08.17",
 ##  Please adjust also the VERSION file in the package directory when
 ##  changing this.
 
 ##  Release date of the current version in dd/mm/yyyy format.
 # 
-Date := "04/04/2010",
+Date := "17/08/2010",
 
 ##  URL of the archive(s) of the current package release, but *without*
 ##  the format extension(s), like '.zoo', which are given next.
@@ -123,7 +123,7 @@ Persons := [
     IsAuthor      := true,
     IsMaintainer  := true,
     Email         := "barakat@mathematik.uni-kl.de",
-    WWWHome       := "http://wwwb.math.rwth-aachen.de/~barakat/",
+    WWWHome       := "http://www.mathematik.uni-kl.de/~barakat/",
     PostalAddress := Concatenation( [
                        "Department of Mathematics\n",
                        "University of Kaiserslautern\n",
@@ -262,7 +262,7 @@ Dependencies := rec(
   # list of pairs [package name, (least) version],  package name is case
   # insensitive, least version denoted with '>=' prepended to version string.
   # without these, the package will not load
-  NeededOtherPackages := [ [ "homalg", ">= 2010.03.19" ] ],
+  NeededOtherPackages := [ [ "Modules", ">= 2010.08.17" ] ],
   # without these the package will issue a warning while loading
   # SuggestedOtherPackages := [],
   SuggestedOtherPackages := [ [ "GAPDoc", ">= 1.0" ] ],
