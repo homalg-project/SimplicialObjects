@@ -17,7 +17,7 @@ test:	doc
 archive: test
 	(mkdir -p ../tar; cd ..; tar czvf tar/SimplicialObjects.tar.gz --exclude ".DS_Store" --exclude "*~" SimplicialObjects/doc/*.* SimplicialObjects/doc/clean SimplicialObjects/gap/*.{gi,gd} SimplicialObjects/{CHANGES,PackageInfo.g,README,VERSION,init.g,read.g,makedoc.g,makefile,maketest.g} SimplicialObjects/examples/*.g)
 
-WEBPOS=~/gap/pkg/SimplicialObjects/public_html
+WEBPOS=~/software/pkg/SimplicialObjects/public_html
 WEBPOS_FINAL=~/Sites/homalg-project/SimplicialObjects
 
 towww: archive
