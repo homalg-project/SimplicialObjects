@@ -69,9 +69,9 @@ DeclareProperty( "IsNonDegenerate",
 #
 ####################################
 
-##  <#GAPDoc Label="Dimension">
+##  <#GAPDoc Label="Dimension:simplices">
 ##  <ManSection>
-##    <Attr Arg="sigma" Name="Dimension"/>
+##    <Attr Arg="sigma" Name="Dimension" Label="for simplices"/>
 ##    <Returns>a nonnegative integer</Returns>
 ##    <Description>
 ##      The dimension of the simplex <A>sigma</A>.

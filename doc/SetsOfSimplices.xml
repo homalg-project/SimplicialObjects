@@ -38,7 +38,7 @@
 <!-- the following attributes are intrinsic in the sense that
      they can safely be attached to any copy of the object -->
 
-<#Include Label="Dimension">
+<#Include Label="Dimension:setsofsimplices">
 <#Include Label="NrNonDegenerateSimplices">
 <#Include Label="NrDegenerateSimplices">
 

@@ -43,9 +43,9 @@ DeclareCategory( "IsSetOfSimplices",
 #
 ####################################
 
-##  <#GAPDoc Label="Dimension">
+##  <#GAPDoc Label="Dimension:setsofsimplices">
 ##  <ManSection>
-##    <Attr Arg="Xn" Name="Dimension"/>
+##    <Attr Arg="Xn" Name="Dimension" Label="for sets of simplices"/>
 ##    <Returns>a nonnegative integer</Returns>
 ##    <Description>
 ##      A set of <A>n</A>-simplices <A>Xn</A>.
