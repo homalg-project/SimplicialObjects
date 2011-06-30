@@ -150,7 +150,7 @@ InstallMethod( AssociatedChainComplex,
                 fs := FaceMaps( X )( n, Xd[i] );
                 if IsNonDegenerate( fs ) then
                     j := Position( Xd_1, fs );
-                    AddToEntryOfHomalgMatrix( boundary, i, j, (-1)^n * one );
+                    AddToMatElm( boundary, i, j, (-1)^n * one );
                 fi;
             od;
         od;
