@@ -17,6 +17,7 @@
 
 # a new GAP-category:
 
+if not IsBound( IsSimplicialSet ) then
 ##  <#GAPDoc Label="IsSimplicialSet">
 ##  <ManSection>
 ##    <Filt Type="Category" Arg="X" Name="IsSimplicialSet"/>
@@ -31,6 +32,7 @@ DeclareCategory( "IsSimplicialSet",
 ##    </Description>
 ##  </ManSection>
 ##  <#/GAPDoc>
+fi;
 
 ####################################
 #

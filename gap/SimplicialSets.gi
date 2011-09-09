@@ -9,6 +9,7 @@
 ##
 #############################################################################
 
+if not IsBound( IsSimplicialSetRep ) then
 ##  <#GAPDoc Label="IsSimplicialSetRep">
 ##  <ManSection>
 ##    <Filt Type="Representation" Arg="X" Name="IsSimplicialSetRep"/>
@@ -25,6 +26,7 @@ DeclareRepresentation( "IsSimplicialSetRep",
 ##    </Description>
 ##  </ManSection>
 ##  <#/GAPDoc>
+fi;
 
 ####################################
 #
