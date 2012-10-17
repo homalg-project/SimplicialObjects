@@ -1,16 +1,3 @@
-##  this creates the documentation, needs: GAPDoc package, latex, pdflatex,
-##  mkindex, dvips
-##  
-##  Call this with GAP.
-##
-
-LoadPackage( "GAPDoc" );
-
-SetGapDocLaTeXOptions( "utf8" );
-
-bib := ParseBibFiles( "doc/SimplicialObjects.bib" );
-WriteBibXMLextFile( "doc/SimplicialObjectsBib.xml", bib );
-
 list := [
          "../gap/SimplicialObjectsForHomalg.gd",
          "../gap/SimplicialObjectsForHomalg.gi",
@@ -26,12 +13,4 @@ list := [
          "../examples/KC2.g",
          "../examples/KS3.g",
          ];
-
-PrintTo( "VERSION", PackageInfo( "SimplicialObjects" )[1].Version );
-
-MakeGAPDocDoc( "doc", "SimplicialObjectsForHomalg", list, "SimplicialObjectsForHomalg" );
-
-GAPDocManualLab("SimplicialObjects");
-
-QUIT;
 

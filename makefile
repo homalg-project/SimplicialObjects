@@ -3,7 +3,7 @@ all: doc test
 doc: doc/manual.six
 
 doc/manual.six: makedoc.g maketest.g \
-		PackageInfo.g VERSION \
+		PackageInfo.g \
 		doc/SimplicialObjects.bib doc/*.xml \
 		gap/*.gd gap/*.gi examples/*.g
 	        gap makedoc.g
@@ -15,7 +15,7 @@ test:	doc
 	gap maketest.g
 
 archive: test
-	(mkdir -p ../tar; cd ..; tar czvf tar/SimplicialObjects.tar.gz --exclude ".DS_Store" --exclude "*~" SimplicialObjects/doc/*.* SimplicialObjects/doc/clean SimplicialObjects/gap/*.{gi,gd} SimplicialObjects/{CHANGES,PackageInfo.g,README,VERSION,init.g,read.g,makedoc.g,makefile,maketest.g} SimplicialObjects/examples/*.g)
+	(mkdir -p ../tar; cd ..; tar czvf tar/SimplicialObjects.tar.gz --exclude ".DS_Store" --exclude "*~" SimplicialObjects/doc/*.* SimplicialObjects/doc/clean SimplicialObjects/gap/*.{gi,gd} SimplicialObjects/{CHANGES,PackageInfo.g,README,VERSION,init.g,read.g,makedoc.g,makefile,maketest.g,ListOfDocFiles.g} SimplicialObjects/examples/*.g)
 
 WEBPOS=public_html
 WEBPOS_FINAL=~/Sites/homalg-project/SimplicialObjects
