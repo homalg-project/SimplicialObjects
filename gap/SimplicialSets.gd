@@ -17,22 +17,20 @@
 
 # a new GAP-category:
 
-if not IsBound( IsSimplicialSet ) then
-##  <#GAPDoc Label="IsSimplicialSet">
+##  <#GAPDoc Label="IsSimplicialSetGapCat">
 ##  <ManSection>
-##    <Filt Type="Category" Arg="X" Name="IsSimplicialSet"/>
+##    <Filt Type="Category" Arg="X" Name="IsSimplicialSetGapCat"/>
 ##    <Returns><C>true</C> or <C>false</C></Returns>
 ##    <Description>
 ##      The &GAP; category of simplicial sets. <P/>
 ##      (It is a subcategory of the &GAP; representation <Ref Filt="IsSimplicialObject"/>.)
 ##    <Listing Type="Code"><![CDATA[
-DeclareCategory( "IsSimplicialSet",
+DeclareCategory( "IsSimplicialSetGapCat",
         IsSimplicialObject );
 ##  ]]></Listing>
 ##    </Description>
 ##  </ManSection>
 ##  <#/GAPDoc>
-fi;
 
 ####################################
 #
@@ -57,7 +55,7 @@ fi;
 ##  <#/GAPDoc>
 ##
 DeclareAttribute( "FaceMaps",
-        IsSimplicialSet );
+        IsSimplicialSetGapCat );
 
 ##  <#GAPDoc Label="RingOfAssociatedChainComplex">
 ##  <ManSection>
@@ -70,7 +68,7 @@ DeclareAttribute( "FaceMaps",
 ##  <#/GAPDoc>
 ##
 DeclareAttribute( "RingOfAssociatedChainComplex",
-        IsSimplicialSet );
+        IsSimplicialSetGapCat );
 
 ##  <#GAPDoc Label="AssociatedChainComplex">
 ##  <ManSection>
@@ -84,7 +82,7 @@ DeclareAttribute( "RingOfAssociatedChainComplex",
 ##  <#/GAPDoc>
 ##
 DeclareAttribute( "AssociatedChainComplex",
-        IsSimplicialSet );
+        IsSimplicialSetGapCat );
 
 ####################################
 #

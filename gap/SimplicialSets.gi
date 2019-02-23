@@ -9,24 +9,22 @@
 ##
 #############################################################################
 
-if not IsBound( IsSimplicialSetRep ) then
-##  <#GAPDoc Label="IsSimplicialSetRep">
+##  <#GAPDoc Label="IsSimplicialSetGapRep">
 ##  <ManSection>
-##    <Filt Type="Representation" Arg="X" Name="IsSimplicialSetRep"/>
+##    <Filt Type="Representation" Arg="X" Name="IsSimplicialSetGapRep"/>
 ##    <Returns><C>true</C> or <C>false</C></Returns>
 ##    <Description>
 ##      The representation of simplicial objects. <P/>
-##      (It is a representation of the &GAP; category <Ref Filt="IsSimplicialSet"/>
+##      (It is a representation of the &GAP; category <Ref Filt="IsSimplicialSetGapCat"/>
 ##       and a subrepresentation of the &GAP; representation <Ref Filt="IsSimplicialObjectRep"/>.)
 ##    <Listing Type="Code"><![CDATA[
-DeclareRepresentation( "IsSimplicialSetRep",
-        IsSimplicialObjectRep and IsSimplicialSet,
+DeclareRepresentation( "IsSimplicialSetGapRep",
+        IsSimplicialObjectRep and IsSimplicialSetGapCat,
         [ "FunctorOnObjects", "FaceOfNonDegenerateSimplex" ] );
 ##  ]]></Listing>
 ##    </Description>
 ##  </ManSection>
 ##  <#/GAPDoc>
-fi;
 
 ####################################
 #
@@ -41,7 +39,7 @@ BindGlobal( "TheFamilyOfSimplicialSets",
 # a new type:
 BindGlobal( "TheTypeSimplicialSet",
         NewType( TheFamilyOfSimplicialSets,
-                IsSimplicialSetRep ) );
+                IsSimplicialSetGapRep ) );
 
 ####################################
 #
@@ -52,7 +50,7 @@ BindGlobal( "TheTypeSimplicialSet",
 ##
 InstallMethod( FaceMaps,
         "a simplicial set",
-        [ IsSimplicialSet ],
+        [ IsSimplicialSetGapCat ],
         
   function( X )
     local f, facemaps;
@@ -100,14 +98,14 @@ end );
 ##
 InstallMethod( RingOfAssociatedChainComplex,
         "a simplicial set",
-        [ IsSimplicialSet ],
+        [ IsSimplicialSetGapCat ],
         
   X -> HOMALG_MATRICES.ZZ );
 
 ##
 InstallMethod( AssociatedChainComplex,
         "a simplicial set",
-        [ IsSimplicialSet ],
+        [ IsSimplicialSetGapCat ],
         
   function( X )
     local R, X0, l0, C;
@@ -306,7 +304,7 @@ end );
 ##
 InstallMethod( ViewObj,
         "a simplicial set",
-        [ IsSimplicialSet ],
+        [ IsSimplicialSetGapCat ],
         
   function( o )
     
@@ -317,7 +315,7 @@ end );
 ##
 InstallMethod( Display,
         "a simplicial set",
-        [ IsSimplicialSet ],
+        [ IsSimplicialSetGapCat ],
         
   function( o )
     
