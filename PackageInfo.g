@@ -237,9 +237,6 @@ PackageWWWHome := "http://homalg.math.rwth-aachen.de/index.php/unreleased/simpli
 PackageDoc := rec(
   # use same as in GAP            
   BookName  := "SimplicialObjects",
-  # format/extension can be one of .zoo, .tar.gz, .tar.bz2, -win.zip
-  Archive := 
-    "http://homalg.math.rwth-aachen.de/~barakat/homalg-project/SimplicialObjects/SimplicialObjects.tar.gz",
   ArchiveURLSubset := ["doc"],
   HTMLStart := "doc/chap0.html",
   PDFFile   := "doc/manual.pdf",
