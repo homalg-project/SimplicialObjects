@@ -204,6 +204,8 @@ PackageInfoURL :=
 #   is an example of how to create a <span class=\"pkgname\">GAP</span> \
 #   package. It has little functionality except for being a package",
 #
+AbstractHTML   :=  "",
+
 PackageWWWHome := "http://homalg.math.rwth-aachen.de/index.php/unreleased/simplicialobjects",
 #
 #               
